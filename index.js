@@ -1,19 +1,19 @@
-import {Header, Nav, Main, Footer} from "./components";
+import { Header, Nav, Main, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
-import dotenv from "dotenv"
 
-// Make sure that dotenv.config(); is placed after all of you import statements
-dotenv.config();
+
 const router = new Navigo("/");
+
 function render(state = store.Home) {
-  document.querySelector('#root').innerHTML = `
+  document.querySelector("#root").innerHTML = `
   ${Header(state)}
   ${Nav(store.Links)}
   ${Main(state)}
-  ${Footer()}`;
+  ${Footer()}
+  `;
 
   afterRender(state);
 
